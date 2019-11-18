@@ -1,0 +1,292 @@
+import { Image, Notes } from 'mdx-deck'
+import ionic from '../theme/ionic'
+import Provider from '../layout/provider'
+import ColorLayout from '../layout/color'
+import {  CodeSurfer } from 'code-surfer';
+import {  vsDark } from '@code-surfer/themes';
+
+export const themes = [ionic, Provider];
+
+<img src="ionic-icon.svg" width="200" />
+
+<br/>
+
+# Ionic & React
+
+[Mike Hartington | @mhartington](https://twitter.com/mhartington)
+
+---
+
+### Let's rewind to 2013
+
+---
+
+### This mobile web <br/> thing is here to stay
+
+---
+
+> Most mobile tools our there are a pain to <br/> use and are difficult to wire together
+
+---
+
+### Enter Ionic
+
+- Components built for mobile
+- Gestures & Animations
+- All around awesome stuff
+
+---
+
+<img src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg" width="400" />
+
+---
+
+For us…AngularJS was the right call for us.
+
+---
+
+### Fast forward to 2018
+
+---
+
+Frameworks (and JavaScript) got good
+
+---
+
+- Angular is great
+- Vue is great
+- React is great
+- **X** is great
+
+---
+
+The argument is not "what is better" <br/> but "what is right for my team and needs"
+
+---
+
+But frameworks can come and go
+
+---
+
+### AngularJS => Angular => ???
+
+<Notes>
+
+Insert your favorite framework there now, but what about in 5 years?
+The problem here is that frameworks come and go, and if you don't think your framework is going to go away, you're kidding yourself.
+
+There needs to be a more stable solution.
+
+</Notes>
+
+---
+
+### Frameworks for:
+
+- **Apps** does make sense
+
+- **Components** do not make sense
+
+---
+
+#### What option allows for maximum flexibility <br/> but still provides an entry point for frameworks?
+
+---
+
+### Web Components
+
+_Specifically built with StencilJS_
+
+---
+
+### Why
+
+- Built in the browser (stable)
+- Low Level (fast by default)
+- Flexible enough for our needs
+- No custom runtime
+
+<Notes>I think web components get dragged under on the twitter/social media conversation. A lot of stems from misinformation or misunderstand what the goal of web components are.
+
+Be it that some of this misinformation has come from creators/leaders in the web component world does make it a bit more difficult to fight, there are definite values here that you could get from frameworks, but at a fraction of the size
+</Notes>
+
+---
+
+### So why Stencil
+
+- Compiler for Web Components
+- VDom + Static types
+- Normalizes component quirks (Attrs vs Props)
+- Differential builds/polyfils
+
+<Notes>
+
+SO if WC are so great, why use something like Stencil? Why not just use them directly.
+
+So for those who don't know, Stencil is a project we at Ionic created to make building web components feel more natural to framework focused devs. It's Goal is to help you make the component layer and not be a replacement for your framework, but integrate with them seamlessly.
+
+Stencil also helps dev deal with the mental shift between things that are properties and attributes. This actually took me a little bit to actually understand, mostly because I've been in framework land for so long. But the TL;DR of it is that when declare something at a property in Stencil, a attribute is also created on the element that maps directly back. SO there's no need to have this mental mapping of what to update. You just do one operation and both are handled.
+
+</Notes>
+
+
+---
+
+### So how does it work?
+
+---
+
+
+<CodeSurfer>
+
+```ts file="../snippets/ionic-component.ts"
+```
+
+```diff 1:5
+```
+
+```diff 8:16
+```
+
+```diff 24,28:42
+```
+
+</CodeSurfer>
+
+---
+
+### Core Goals
+
+- Isolate components to simplest form
+- Props, events, methods, and render
+- Decorators for simplicity!
+
+---
+
+### `<React>`
+
+---
+
+### Challenges
+
+- Props/Attrs and values
+- Handling Custom Events
+- Working with Routers…again
+
+---
+
+### FUD
+
+---
+
+"Web Components are DOA"
+
+"Web Components can only handle strings"
+
+"React is better because..."
+
+---
+
+<ColorLayout bgColor="#15202b">
+  <h1 style="color: white; font-size: 60px">"BUILD REACT INTO THE BROWSER YOU COWARDS"</h1>
+</ColorLayout>
+
+---
+
+<p style="font-size:100px">ಠ_ಠ</p>
+
+---
+
+_end side rant..._
+
+---
+
+### Demo
+
+`$ ionic start myApp --type react`
+
+
+---
+
+### What worked well
+
+---
+
+### Embrace React
+- Keeping opinions minimal
+- Splitting router from components
+- Automated Wrapper Components
+
+---
+
+<CodeSurfer>
+
+```ts
+export const IonCard = createReactComponent('ion-card', true);
+export const IonCardContent = createReactComponent('ion-card-content');
+```
+
+</CodeSurfer>
+
+---
+
+
+<CodeSurfer>
+
+```ts
+render(){
+  ...
+  return React.createElement(
+    tagName,
+    newProps,
+    children
+  );
+}
+```
+
+</CodeSurfer>
+
+---
+
+### `</React>`
+
+---
+
+All this work was done by hand at first
+
+---
+
+But now is provided by stencil and it's compiler
+
+---
+
+### So, why do this?
+
+---
+
+- Frameworks come and go
+- Standards are here to stay
+- **But Frameworks are awesome**
+
+---
+
+Support ALL the frameworks and keep Ionic's core "close to the metal"
+
+---
+
+<Image src="frameworks-platform.png" size="cover" />
+
+---
+
+Make building bad ass apps possible in any technology of choice
+
+
+---
+
+### Thanks
+
+[Mike Hartington | @mhartington](https://twitter.com/mhartington)
+
+#### `</html>`
+
