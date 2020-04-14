@@ -1,139 +1,79 @@
-export default {
-  fonts: {
-    body: '"Inter", system-ui, sans-serif',
-    heading: 'inherit',
-    monospace: '"Operator Mono", monospace'
-  },
+import { swiss } from 'mdx-deck/themes';
+import Provider from '../layout/provider'
+const theme = {
   fontWeights: {
-    body: 400,
-    heading: 700,
-    bold: 700
+    body: 200,
+    heading: 600,
+    bold: 500
   },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.125
+  fonts: {
+      body: 'system-ui, sans-serif',
   },
   colors: {
-    text: '#434C6C',
-    background: '#ffffff',
-    link: '#3880FF',
-    pre: '#f0f',
-    preBackground: '#011627',
-    code: '#434C6C',
-    primary: '#3880FF',
-    secondary: '#30c',
-    muted: '#f6f6f6',
-    heading: '#151D34'
+    primary: '#6699cc',
   },
   styles: {
-    h1: {
-      color: 'primary',
-      fontSize: '2em',
-      fontWeight: 900,
-      textTransform: 'uppercase',
-      marginTop: 0,
-      marginBottom: 0,
-      textAlign: 'center'
+    Slide: {
+      fontFamily: 'body',
     },
-    blockquote: {
-      fontStyle: 'italic',
-      width: '80%',
-      textAlign: 'center'
+    Split: {
+      textAlign: 'right'
+    },
+    h1: {
+      margin: '0 0 10px'
     },
     h2: {
-      fontSize: '3.5em',
-      fontWeight: 900,
-      marginBottom: 0,
-      marginTop: 0,
-      textTransform: 'uppercase',
-      wordSpacing: 20,
-      textAlign: 'center',
-      color: 'heading'
+      margin: '0 0 10px'
     },
     h3: {
-      fontSize: '1.75em',
-      marginBottom: 10,
-      fontWeight: 900,
-      marginTop: 10,
-      textTransform: 'uppercase',
-      wordSpacing: 10,
-      textAlign: 'center',
-      color: 'primary',
+      margin: '0 0 10px'
     },
     h4: {
-      textAlign: 'center',
-      color: 'heading'
+      margin: '0 0 10px'
     },
-    root: {
-      fontFamily: 'body',
-      lineHeight: 'body',
-      fontWeight: 'body',
-      fontSize: 16
+    h5: {
+      margin: '0 0 10px'
+    },
+    h6: {
+      margin: '0 0 10px'
     },
     p: {
-      fontFamily: 'body',
-      fontWeight: 'body',
-      lineHeight: 'body',
-      textAlign: 'center'
+      margin: '10px 0 ',
     },
     a: {
-      color: 'text',
       textDecoration: 'none',
       transition: "color 0.15s ease",
       ':hover': {
-        color: 'link'
+        color: '#96B3F9'
       },
-      '::after': {
-        content: '""',
-        display: 'block',
-        width: '100%',
-        height: 2,
-        backgroundColor: 'primary',
-        opacity: 0,
-        transform: 'translate3D(0,10px, 0)',
-        transition: 'opacity 0.3s, transform 0.3s',
-      },
-      ':hover::after': {
-        opacity: 1,
-        transform: 'translate3D(0,0,0)',
-      }
     },
-    pre: {
-      fontFamily: 'monospace',
-      overflowX: 'auto',
-      textAlign: 'left !important',
-      fontWeight: 500,
-      code: {
-        color: 'inherit'
-      }
-    },
-    code: {
-      fontFamily: 'monospace',
-      fontSize: 'inherit',
-    },
-    table: {
-      width: '100%',
-      borderCollapse: 'separate',
-      borderSpacing: 0
-    },
-    th: {
-      textAlign: 'left',
-      borderBottomStyle: 'solid'
-    },
-    td: {
-      textAlign: 'left',
-      borderBottomStyle: 'solid'
-    },
-    img: {
-      maxWidth: '100%'
-    },
-    ol: {
-      textAlign: 'left'
+    blockquote: {
+      fontStyle: 'italic'
     },
     ul: {
-      textAlign: 'center',
       listStyle: 'none',
-      lineHeight: 1.6
+      paddingInlineStart: 0,
+      textAlign: 'left'
+    },
+    li: {
+      lineHeight: 2.2,
+      textAlign: 'left'
+    },
+    img: {
+      maxWidth: '100%',
+    },
+    root: {
+      '.profile-img': {
+        width: '250px',
+        borderRadius: '50%',
+        border: 'solid 2px rgba(217,217,217,0.7)',
+      }
     }
-  }
+  },
+}
+
+export default {
+  ...swiss,
+  ...theme,
+  Provider
 };

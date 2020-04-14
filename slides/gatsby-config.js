@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/',
+  pathPrefix: '/ionic-react-talk',
   plugins: [
     'gatsby-plugin-catch-links',
     {

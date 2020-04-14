@@ -3,7 +3,6 @@ import { useDeck } from 'mdx-deck';
 
 function Provider(props) {
   const deck = useDeck();
-  console.log('deck', deck);
   return (
     <div>
       <div
@@ -22,11 +21,13 @@ function Provider(props) {
         <div
           css={{
             padding: '14px 28px',
-            background: 'white',
+            background: 'rgba(255,255,255,0.3)',
             position: 'fixed',
             fontFamily: '"Inter", system-ui, sans-serif',
             fontWeight: 'bolder',
             fontSize: '28px',
+            backdropFilter: 'blur(10px)',
+            borderTopLeftRadius: '30px',
             right: 0,
             bottom: 0,
             margin: 0,
@@ -39,6 +40,4 @@ function Provider(props) {
     </div>
   );
 }
-export default {
-  Provider
-};
+export default Provider;
